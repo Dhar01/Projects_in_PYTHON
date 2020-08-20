@@ -24,7 +24,7 @@ def translation(word):
             return "The word doesn't exist. Please check it again"
         else:
             return "We didn't understand your entry"
-    
+
     else:
         return "The word doesn't exist. Please check it again!"
 
