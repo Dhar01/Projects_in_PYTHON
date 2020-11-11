@@ -1,11 +1,18 @@
+"""
+A simple Dictionary project in python.
+data.json file is needed for this and I attached it.
+
+This is a project from an udemy course
+"""
+
 import json
 from difflib import get_close_matches   # for smarting the program
-
-""" This is a project from an udemy course """
 
 data = json.load(open("data.json"))
 
 def translation(word):
+    """Translating the given word"""
+
     # for various uppercase input
     word = word.lower()
 
@@ -14,16 +21,17 @@ def translation(word):
         return data[word]
 
     elif len(get_close_matches(word, data.keys())) > 0:
-        """ For guessing the close correct word """
+#        """ For guessing the close correct word """
         yn = input("Did you mean %s instead? Enter Y if yes, or N if no: " % get_close_matches(word, data.keys())[0])
+
         yn = yn.lower()
 
         if yn == "y":
             return data[get_close_matches(word, data.keys())[0]]
         elif yn == "n":
-            return "The word doesn't exist. Please check it again"
+            return "The word doesn't exist. Please check it again."
         else:
-            return "We didn't understand your entry"
+            return "We didn't understand your entry."
 
     else:
         return "The word doesn't exist. Please check it again!"
