@@ -1,4 +1,4 @@
 # Projects in PYTHON
 
-This repository contains some imple projects in python for learning purpose.
+This repository contains some simple projects in python.
 
